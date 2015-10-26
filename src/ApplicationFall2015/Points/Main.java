@@ -23,6 +23,5 @@ public class Main {
         int[] newPos = point.findNewPosition();
         System.out.println("");
         System.out.println("Your new position is: " + newPos[0] + " " + newPos[1]);
-
     }
 }
