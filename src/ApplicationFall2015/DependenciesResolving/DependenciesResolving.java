@@ -1,10 +1,7 @@
 package ApplicationFall2015.DependenciesResolving;
 
-
-import sun.reflect.misc.FieldUtil;
-
 import java.io.File;
-import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * Created by Inspired Day on 10/24/2015.
@@ -21,16 +18,56 @@ public class DependenciesResolving {
         init();
     }
 
-    public  void init(){
-        //String url = getClass().getClassLoader().getResource("").getPath() + "modules/installed_modules/";
-        File folder = new File(installedModulesPath);
-        String[] listOfDependencies = folder.list();
-        System.out.println(folder.getAbsolutePath());
+    public void init(){
+        checkInstalled();
+        checkDependencies();
+    }
 
-        if (listOfDependencies != null) {
-            for(String dependency:listOfDependencies){
-                System.out.println(dependency);
+    private void checkInstalled(){
+        File folder = new File(installedModulesPath);
+        availablePackages = folder.list();
+    }
+
+    private void checkDependencies(){
+        HashMap tempIndex = dependencies.getIndex();
+        String[] temp = tempIndex.get("dependencies").toString().split(" ");
+        checkDependenciesRecursively(temp);
+        System.out.println("All done.");
+    }
+
+    private void checkDependenciesRecursively(String[] key){
+        for(String dependency:key){
+            if(!findInAvailablePackages(dependency)){
+                checkInAllPackages(dependency);
+            } else{
+                System.out.println(dependency + " is already installed.");
             }
         }
+    }
+
+    private boolean findInAvailablePackages(String dependency){
+        for(String avPackage:availablePackages){
+            if(avPackage.equals(dependency)) return true;
+        }
+        return false;
+    }
+
+    private void checkInAllPackages(String packageName){
+        HashMap tempIndex = all.getIndex();
+        String currentDependencies = tempIndex.get(packageName).toString();
+        String[] temp = currentDependencies.split(" ");
+
+        System.out.println("Installing " + packageName);
+        install(packageName);
+
+        if(!temp[0].equals("")){
+            System.out.println("In order to install " + packageName + ", we need " + currentDependencies);
+            checkDependenciesRecursively(temp);
+        }
+    }
+
+    private void install(String packageName){
+        File dir = new File(installedModulesPath + "\\" + packageName);
+        dir.mkdir();
     }
 }
