@@ -20,10 +20,13 @@ public class Points {
         boolean reversed = false;
         for(int i = 0; i < path.length(); i++){
             if(path.charAt(i) == '~'){
-                reversed = !reversed? true: false;
+                reversed = !reversed;
             } else {
-                newX += newDirection(reversed, path.charAt(i));
-                newY += newDirection(reversed, path.charAt(i));
+                if(path.charAt(i) == 'v' || path.charAt(i) == '^'){
+                    newY += newDirection(reversed, path.charAt(i));
+                } else {
+                    newX += newDirection(reversed, path.charAt(i));
+                }
             }
         }
         return new int[]{newX, newY};
@@ -35,6 +38,10 @@ public class Points {
                 return reversed ? -1: 1;
             case '<':
                 return reversed ? 1: -1;
+            case '^':
+                return reversed ? 1: -1;  // increases downwards and decreases upwards
+            case 'v':
+                return reversed ? -1: 1;
             default:
                 return 0;
         }

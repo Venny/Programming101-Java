@@ -7,6 +7,6 @@ public class Main {
     public static void main(String[] args) {
         Packages allPackages = new Packages("modules/all_packages.json");
         Packages dependencies = new Packages("modules/dependencies.json");
-        DependenciesResolving.init(allPackages, dependencies);
+        DependenciesResolving dependenciesTool = new DependenciesResolving(allPackages, dependencies);
     }
 }

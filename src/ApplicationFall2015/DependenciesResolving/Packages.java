@@ -10,17 +10,17 @@ import java.util.HashMap;
  * Created by Inspired Day on 10/25/2015.
  */
 public class Packages {
-    private String allPackages = "";
+    private String packages = "";
     private HashMap<String, String> index = new HashMap<>();
 
-    public Packages(String allPackages){
-        this.allPackages = allPackages;
+    public Packages(String packages){
+        this.packages = packages;
         initIndex();
     }
 
     private String readFile(){
         String result = "";
-        URL url = getClass().getResource(allPackages);
+        URL url = getClass().getResource(packages);
         try{
             File file = new File(url.toURI());
             BufferedReader bufferReader = new BufferedReader(new FileReader(file));
