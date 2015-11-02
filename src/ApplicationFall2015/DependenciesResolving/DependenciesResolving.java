@@ -57,11 +57,11 @@ public class DependenciesResolving {
         String currentDependencies = tempIndex.get(packageName).toString();
         String[] temp = currentDependencies.split(" ");
 
-        System.out.println("Installing " + packageName);
+        System.out.println("Installing " + packageName + ".");
         install(packageName);
 
         if(!temp[0].equals("")){
-            System.out.println("In order to install " + packageName + ", we need " + currentDependencies);
+            System.out.println("In order to install " + packageName + ", we need " + currentDependencies + ".");
             checkDependenciesRecursively(temp);
         }
     }
