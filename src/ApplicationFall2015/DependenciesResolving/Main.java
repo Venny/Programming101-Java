@@ -8,5 +8,6 @@ public class Main {
         Packages allPackages = new Packages("modules/all_packages.json");
         Packages dependencies = new Packages("modules/dependencies.json");
         DependenciesResolving dependenciesTool = new DependenciesResolving(allPackages, dependencies);
+
     }
 }
