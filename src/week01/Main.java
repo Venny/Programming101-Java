@@ -97,7 +97,6 @@ public class Main {
             n = result;
         }
         return result;
+
     }
-
-
 }
