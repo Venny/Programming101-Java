@@ -10,7 +10,7 @@ public class IsPalindrome {
         System.out.println(isPalindrome("abba"));
     }
 
-    private static boolean isPalindrome(String argument){
+    public static boolean isPalindrome(String argument){
         int length = argument.length();
         for (int i = 0; i < (length / 2); i++){
             //System.out.println(argument.charAt(i) + " " + argument.charAt(length - i - 1));
@@ -21,7 +21,7 @@ public class IsPalindrome {
         return true;
     }
 
-    private static boolean isPalindrome(int num){
+    public static boolean isPalindrome(int num){
         int rev = 0;
         int n = num;
         while(n > 0){
