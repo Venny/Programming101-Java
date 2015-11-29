@@ -1,4 +1,4 @@
-package week01;
+package week01.Wednesday;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 

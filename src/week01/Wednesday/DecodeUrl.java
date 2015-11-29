@@ -1,4 +1,4 @@
-package week01;
+package week01.Wednesday;
 
 import java.io.UnsupportedEncodingException;
 

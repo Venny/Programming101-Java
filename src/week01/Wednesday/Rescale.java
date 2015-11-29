@@ -1,4 +1,4 @@
-package week01;
+package week01.Wednesday;
 
 /**
  * Created by inspired on 20.11.15.

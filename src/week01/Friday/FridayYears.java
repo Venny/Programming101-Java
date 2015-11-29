@@ -1,4 +1,4 @@
-package week01;
+package week01.Friday;
 
 import java.util.Calendar;
 
