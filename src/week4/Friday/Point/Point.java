@@ -6,10 +6,10 @@ import week4.Friday.LineSegment.LineSegment;
  * Created by inspired on 11.12.15.
  */
 final public class Point {
-    private final int x;
-    private final int y;
+    private final double x;
+    private final double y;
 
-    public Point(int x, int y) {
+    public Point(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -19,11 +19,11 @@ final public class Point {
         this.y = point.getY();
     }
 
-    public int getX(){
+    public double getX(){
         return x;
     }
 
-    public int getY(){
+    public double getY(){
         return y;
     }
 
@@ -36,14 +36,14 @@ final public class Point {
         return "Point(" + x + ", " + y + ")";
     }
 
-    public boolean equals(Point point){
-        return this.x == point.x && this.y == point.y;
+    public boolean equals(Object point){
+        return this.x == ((Point) point).getX() && this.y == ((Point) point).getY();
     }
 
     public int hashCode() {
         int hash = 17;
-        Integer x1 = x;
-        Integer y1 = y;
+        Double x1 = x;
+        Double y1 = y;
 
         hash = (hash * 23) + x1.hashCode();
         hash = hash * 23 + y1.hashCode();
