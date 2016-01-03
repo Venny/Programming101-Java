@@ -35,8 +35,8 @@ final public class LineSegment implements Comparable {
     }
 
     public double getLength(){
-        int a = Math.abs(first.getX()) + Math.abs(second.getX());
-        int b = Math.abs(first.getY()) + Math.abs(second.getY());
+        double a = Math.abs(first.getX()) + Math.abs(second.getX());
+        double b = Math.abs(first.getY()) + Math.abs(second.getY());
 
         // using the Pythagorean Theorem
         double length = Math.sqrt(a * a + b * b);
