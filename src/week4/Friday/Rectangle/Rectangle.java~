@@ -19,7 +19,6 @@ final public class Rectangle {
 
         this.upperLeft = upperLeft;
         this.lowerRight = lowerRight;
- //I think you can use this code below in get functions and delete upperRight and lowerLeft fields
         this.upperRight = new Point(upperLeft.getX(), lowerRight.getY());
         this.lowerLeft = new Point(upperLeft.getX(), lowerRight.getY());
     }
