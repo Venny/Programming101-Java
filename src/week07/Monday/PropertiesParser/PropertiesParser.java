@@ -33,7 +33,7 @@ public class PropertiesParser {
         }
         String trimmedLine = line.replaceAll("\\s","");
         String[] pair = trimmedLine.split("=", 2);
-        System.out.println(pair[0] + " " + pair[1]);
-        parseProperties.put(pair[0], pair[1]);
+        System.out.println(pair[0] + " " + pair[1]); // You don't need this :D
+        parseProperties.put(pair[0], pair[1]); 
     }
 }
