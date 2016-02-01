@@ -19,29 +19,22 @@ public class SimpleBlockingQueue {
         threadTwo.start();
     }
 
-    protected synchronized void add(){
-        while(simpleQueue.isEmpty()){
-            int num = Integer.parseInt(scanner.nextLine());
-            simpleQueue.add(num);
-            System.out.println(num + " is added.");
-        }
-        scanner.reset();
-        try {
+    protected synchronized void add() throws InterruptedException {
+        while(!simpleQueue.isEmpty()){
             wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
+        int num = scanner.nextInt();
+        simpleQueue.add(num);
+        System.out.println(num + " is added.");
         notifyAll();
     }
 
-    protected synchronized void poll(){
+    protected synchronized void poll() throws InterruptedException {
+        while(simpleQueue.size() == 0){
+            wait();
+        }
         int removed = simpleQueue.poll();
         System.out.println(removed + " is removed.");
-        try {
-            wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         notifyAll();
     }
 }

@@ -14,8 +14,13 @@ public class ThreadTwo implements Runnable {
 
     @Override
     public void run() {
-            queue.poll();
+        while(true) {
+            try {
+                queue.poll();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("The Queue is empty.");
-        return;
+        }
     }
 }

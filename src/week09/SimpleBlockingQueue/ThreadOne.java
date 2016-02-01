@@ -16,7 +16,11 @@ public class ThreadOne implements Runnable {
     @Override
     public void run() {
         while(true){
-            queue.add();
+            try {
+                queue.add();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
