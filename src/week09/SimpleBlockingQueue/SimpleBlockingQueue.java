@@ -15,8 +15,12 @@ public class SimpleBlockingQueue {
         SimpleBlockingQueue queue = new SimpleBlockingQueue();
         Thread threadOne = new Thread(new ThreadOne(queue));
         Thread threadTwo = new Thread(new ThreadTwo(queue));
+        Thread consumer = new Thread(new ThreadOne(queue));
+        Thread producer = new Thread(new ThreadTwo(queue));
         threadOne.start();
         threadTwo.start();
+        consumer.start();
+        producer.start();
     }
 
     protected synchronized void add() throws InterruptedException {
