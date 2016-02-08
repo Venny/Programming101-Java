@@ -1,10 +1,7 @@
-package week09.PointGenerator;
-
-import week09.SimpleBlockingQueue.SimpleBlockingQueue;
+package week09_10.PointGenerator;
 
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by inspired on 25.01.16.

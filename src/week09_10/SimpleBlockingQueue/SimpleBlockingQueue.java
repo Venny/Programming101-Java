@@ -1,4 +1,4 @@
-package week09.SimpleBlockingQueue;
+package week09_10.SimpleBlockingQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;

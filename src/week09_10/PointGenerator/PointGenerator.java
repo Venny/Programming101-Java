@@ -1,8 +1,6 @@
-package week09.PointGenerator;
+package week09_10.PointGenerator;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
-import static java.util.Collections.*;
 
 /**
  * Created by inspired on 03.02.16.

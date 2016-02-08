@@ -1,7 +1,4 @@
-package week09.SimpleBlockingQueue;
-
-import java.util.Queue;
-import java.util.Scanner;
+package week09_10.SimpleBlockingQueue;
 
 /**
  * Created by inspired on 25.01.16.

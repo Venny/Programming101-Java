@@ -1,4 +1,4 @@
-package week09.PointGenerator;
+package week09_10.PointGenerator;
 
 /**
  * Created by inspired on 03.02.16.
